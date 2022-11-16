@@ -1,0 +1,151 @@
+.content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.heading-and-create-btn-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px;
+}
+
+.link {
+    text-decoration: none;
+    color: #1E283C;
+    font-size: 20px;
+    font-weight: 600;
+    position: relative;
+}
+.link:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: -3px;
+    left: 0;
+    background-color: #1E283C;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+
+.link:hover:after{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.edit-title {
+    margin: 24px 0;
+    font-weight: 600;
+}
+
+.messages-container {
+    font-size: 20px;
+    padding: 0 24px;
+}
+
+.message-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 24px;
+    align-items: center;
+    background-color: white;
+    border-radius: 8px;
+    margin-bottom: 18px;
+    transition: .25s ease-in-out;
+
+    position: relative;
+}
+
+.read-indicator {
+    position: absolute;
+    background-color: red;
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    right: -3px;
+    top: -3px;
+
+}
+
+
+.message-title {
+    text-decoration: none;
+    font-weight: 600;
+    color: #1E283C;
+}
+.message-para {
+    text-decoration: none;
+    font-weight: 500;
+    color: #1E283C;
+}
+
+.message-date {
+    margin: 10px 0;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.message-label {
+    margin: 10px 0;
+    font-weight: normal;
+    margin-top: 7px;
+    margin-bottom: 5px;
+    margin-left: 8px;
+}
+
+.btn {
+    text-decoration: none;
+    font-weight: 600;
+    color: #1E283C;
+    padding: 5px 10px;
+    font-size: 20px;
+    background-color: #f2f5fa;
+    border-radius: 5px;
+    margin-right: 10px;
+    transition: .25s ease-in-out;
+}
+
+
+.update-btn:hover {
+    border: 1px solid #1E283C;
+}
+
+.delete-btn {
+    color: #fe3b31;
+}
+
+.delete-btn:hover {
+    color: #fe3b31;
+    border: 1px solid #fe3b31;
+}
+
+
+@media all and (min-width: 480px) and (max-width: 768px) { 
+
+}
+
+@media (max-width: 566px) { 
+    .content-container {
+        padding: 16px;
+    }
+
+    .messages-container {
+        padding: 0;
+    }
+    .message-container {
+        padding: 16px;
+    }
+
+    .heading-and-create-btn-container {
+        padding: 24px 0;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .btn {
+        font-size: 16px;
+    }
+}
