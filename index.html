@@ -24,7 +24,7 @@
                 <h1 class="edit-title">Admin Dashboard</a> </h1>
                 <a href="" class="link">Create new</a>
             </div>
-            <div id="elements" class="content">
+            <div class="content">
 
                 <div class="search-container">
                     <div class="search-form-container">
@@ -39,8 +39,8 @@
                     </div>
                 </div>
         
-                <div class="receipts-container">
-                    <div class="receipt-container">
+                <div id="elements"  class="receipts-container">
+                    <div id="receipt-heading" class="receipt-container">
                         <div class="">
                             <p class="receipt-name-heading">ERP ID</p>
                         </div>
@@ -50,7 +50,9 @@
                         <div class="receipt-title-container">
                             <p class="receipt-date">Date</p>
                         </div>
-                    </div>    
+                    </div>   
+                    
+
                 </div>   
 
                     <!-- <div id="attendance" class="receipt-container">
@@ -121,11 +123,14 @@
         onValue(starCountRef, (snapshot) => {
             const data = snapshot.val();
             const elementsObj  = document.getElementById('elements')
+            const receiptHeadingObj  = document.getElementById('receipt-heading')
             let s = ''
             for (const id in data){
                 s += user_element(id, data[id]['attendance'])
                 // console.log(`${id}: ${data[id]['attendance']}`)
             }
+            elementsObj.innerHTML = '';
+            elementsObj.appendChild(receiptHeadingObj);
             elementsObj.innerHTML = elementsObj.innerHTML + s;
         });
 
